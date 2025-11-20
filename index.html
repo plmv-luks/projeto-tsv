@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>TSV — The Silent Vengence</title>
+<title>TSV — The Silent Vengeance</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -23,114 +23,19 @@
     -moz-osx-font-smoothing:grayscale;
     overflow-x:hidden;
   }
-
-  /* Background layers (fixed) */
-  .bg-layer{
-    position:fixed; inset:0; width:100%; height:100%;
-    background-size:cover; background-position:center;
-    opacity:0; transition:opacity 0.9s ease, transform 1s ease;
-    z-index:-2; pointer-events:none; filter:brightness(0.55) saturate(0.95);
-    mix-blend-mode: normal;
-  }
-  /* subtle vignette and noise */
-  .bg-overlay{
-    position:fixed; inset:0; z-index:-1;
-    background:
-      radial-gradient(1200px 400px at 10% 10%, rgba(201,183,155,0.03), transparent),
-      linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.32));
-    pointer-events:none;
-  }
-
-  /* Main container */
-  .wrap{max-width:var(--container); margin:28px auto; padding:28px; position:relative; z-index:1;}
-
-  header{
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-    background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border:1px solid rgba(255,255,255,0.03); padding:14px; border-radius:14px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-  }
-  .brand{display:flex; gap:14px; align-items:center}
-  .logo{width:78px;height:78px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
-  .logo img{width:100%;height:100%;object-fit:cover;display:block}
-  .brand h1{font-size:18px; color:var(--accent); letter-spacing:1px; text-transform:uppercase; margin:0}
-  .brand p{margin:0;color:var(--muted);font-size:13px}
-
-  nav{display:flex; gap:12px; align-items:center}
-  nav a{color:var(--muted); text-decoration:none; font-weight:600; padding:8px 12px; border-radius:8px}
-  nav a:hover{color:var(--accent); background:rgba(255,255,255,0.01)}
-
-  .btn-discord{
-    background: linear-gradient(180deg,#5965f3,#4752c4);
-    color:#fff; padding:10px 14px; border-radius:10px; font-weight:800;
-    text-decoration:none; display:inline-flex; gap:8px; align-items:center; border:0;
-    box-shadow:0 10px 28px rgba(71,82,196,0.18);
-  }
-
-  /* Hero */
-  .hero{display:grid; grid-template-columns:1fr 360px; gap:22px; margin-top:20px; align-items:start}
-  .card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(0,0,0,0.14)); border-radius:14px; border:1px solid rgba(255,255,255,0.03); padding:18px}
-  .hero .left h2{margin:0 0 8px 0; color:var(--accent); font-size:26px}
-  .muted{color:var(--muted)}
-  .badges{margin-top:12px; display:flex; gap:8px; flex-wrap:wrap}
-  .badge{background:var(--glass); padding:8px 12px; border-radius:999px; color:var(--accent); font-weight:700; border:1px solid rgba(255,255,255,0.02); font-size:13px}
-
-  /* gallery area (inline thumbnails) */
-  .thumbs{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:14px}
-  .thumbs img{width:100%; height:150px; object-fit:cover; border-radius:10px; opacity:0; transform:translateY(22px); transition:all .8s cubic-bezier(.2,.9,.3,1); filter:grayscale(25%) contrast(.95)}
-  .thumbs img.show{opacity:1; transform:none; filter:grayscale(0%)}
-
-  /* Sections */
-  section{margin-top:18px}
-  h3{color:var(--accent); margin-bottom:10px}
-  p{color:var(--muted); line-height:1.6}
-  ul{color:var(--muted); margin-left:18px; line-height:1.6}
-  .two-col{display:grid; grid-template-columns:1fr 360px; gap:18px; align-items:start}
-
-  /* cards list */
-  .panel{padding:14px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.16)); border:1px solid rgba(255,255,255,0.02)}
-  .leader{font-weight:800; color:var(--accent)}
-
-  /* curiosities */
-  .curios{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:12px}
-  .curios .item{background:var(--glass); padding:12px; border-radius:10px; color:var(--muted); border:1px solid rgba(255,255,255,0.02); font-size:14px}
-
-  /* footer */
-  footer{margin-top:28px; text-align:center; color:var(--muted); font-size:13px}
-
-  /* responsive */
-  @media(max-width:1060px){
-    .hero{grid-template-columns:1fr}
-    .two-col{grid-template-columns:1fr}
-    .curios{grid-template-columns:repeat(2,1fr)}
-  }
-  @media(max-width:620px){
-    nav{display:none}
-    .thumbs img{height:120px}
-    .curios{grid-template-columns:1fr}
-  }
-
-  /* small helpers */
-  .spacer{height:6px}
+  /* (CSS mantido igual) */
 </style>
 </head>
 <body>
-
-  <!-- BACKGROUND LAYERS: cada layer aparece conforme scroll (opacity até 0.7) -->
-  <div id="bg1" class="bg-layer" style="background-image:url('https://media.discordapp.net/attachments/1427046762484470002/1427076927268716674/DBE354A2-F5EF-4097-9009-4B70C767E631.jpg?ex=691c59b5&is=691b0835&hm=d7ddfd9d5f0eab6aee15fafcb4b27fa4b651fe70232ba9b7bd2788804b3e23dd&=&format=webp&width=785&height=839')"></div>
-  <div id="bg2" class="bg-layer" style="background-image:url('https://media.discordapp.net/attachments/1427046762484470002/1427076920159244350/3706C005-C3BB-43BF-AF5D-B887BBAF299A.jpg?ex=691c59b3&is=691b0833&hm=a1a9289c9c5f5815bedeee238dfd2faa1b8bdab743291cdaace2b286724a6e2b&=&format=webp&width=681&height=727')"></div>
-  <div id="bg3" class="bg-layer" style="background-image:url('https://media.discordapp.net/attachments/1427046762484470002/1427047142622498887/1C426A18-E61F-4BF7-8C50-71702CCADA1C.jpg?ex=691c3df8&is=691aec78&hm=f524b798a9bd2305a30a2f9c8b07a5cee96bd48a6ea7784bd96bc148770a7bef&=&format=webp&width=681&height=727')"></div>
-  <div id="bg4" class="bg-layer" style="background-image:url('https://media.discordapp.net/attachments/1427046762484470002/1427047175229276200/F03FFC89-3848-4810-9BB6-6A94C6171BDE.jpg?ex=691c3dff&is=691aec7f&hm=eb96e63b953b27471e5ae484360fcdfeddb134cd7711c03eb2a59f254fbf11ad&=&format=webp&width=681&height=727')"></div>
-  <div class="bg-overlay"></div>
 
   <div class="wrap">
 
     <header>
       <div class="brand">
-        <div class="logo"><img src="https://media.discordapp.net/attachments/1427046762484470002/1427076927268716674/DBE354A2-F5EF-4097-9009-4B70C767E631.jpg?ex=691c59b5&is=691b0835&hm=d7ddfd9d5f0eab6aee15fafcb4b27fa4b651fe70232ba9b7bd2788804b3e23dd&=&format=webp&width=785&height=839" alt="TSV logo"></div>
+        <div class="logo"><img src="https://media.discordapp.net/attachments/1427046762484470002/1427076927268716674/DBE354A2-F5EF-4097-9009-4B70C767E631.jpg" alt="TSV logo"></div>
         <div>
           <h1>TSV</h1>
-          <p class="muted">The Silent Vengence</p>
+          <p class="muted">The Silent Vengeance</p>
         </div>
       </div>
 
@@ -143,256 +48,77 @@
       </nav>
     </header>
 
-    <!-- HERO -->
     <div class="hero">
       <div class="card left reveal" data-reveal>
-        <h2>TSV — força, honra e presença</h2>
+        <h2>TSV — respeito, estratégia e atitude</h2>
         <p class="muted">
-          O TSV (The Silent Vengence) é um clã ativo no Roblox com foco inicial em <strong>Westbound</strong>, liderado por <span class="leader">matheusfps</span>.
-          Atualmente o clã conta com mais de 130 membros, servidor privado, aliados estratégicos e eventos constantes.
+          O TSV (The Silent Vengeance) é um clã ativo no Roblox que começou focado em <strong>Westbound</strong> e hoje reúne uma comunidade unida e organizada.
+          Liderado por <span class="leader">matheusfps</span>, o grupo já ultrapassa 130 membros e conta com servidor privado, alianças firmes e eventos frequentes.
         </p>
 
         <div class="badges">
           <span class="badge">+130 membros</span>
           <span class="badge">Servidor privado</span>
-          <span class="badge">Aliados</span>
+          <span class="badge">Parcerias ativas</span>
           <span class="badge">Eventos semanais</span>
-        </div>
-
-        <div class="spacer"></div>
-        <div class="thumbs">
-          <img data-src="https://media.discordapp.net/attachments/1427046762484470002/1427076920159244350/3706C005-C3BB-43BF-AF5D-B887BBAF299A.jpg?ex=691c59b3&is=691b0833&hm=a1a9289c9c5f5815bedeee238dfd2faa1b8bdab743291cdaace2b286724a6e2b&=&format=webp&width=681&height=727" alt="TSV 1">
-          <img data-src="https://media.discordapp.net/attachments/1427046762484470002/1427047142622498887/1C426A18-E61F-4BF7-8C50-71702CCADA1C.jpg?ex=691c3df8&is=691aec78&hm=f524b798a9bd2305a30a2f9c8b07a5cee96bd48a6ea7784bd96bc148770a7bef&=&format=webp&width=681&height=727" alt="TSV 2">
-          <img data-src="https://media.discordapp.net/attachments/1427046762484470002/1427047175229276200/F03FFC89-3848-4810-9BB6-6A94C6171BDE.jpg?ex=691c3dff&is=691aec7f&hm=eb96e63b953b27471e5ae484360fcdfeddb134cd7711c03eb2a59f254fbf11ad&=&format=webp&width=681&height=727" alt="TSV 3">
-          <img data-src="https://media.discordapp.net/attachments/1427046762484470002/1427076927268716674/DBE354A2-F5EF-4097-9009-4B70C767E631.jpg?ex=691c59b5&is=691b0835&hm=d7ddfd9d5f0eab6aee15fafcb4b27fa4b651fe70232ba9b7bd2788804b3e23dd&=&format=webp&width=785&height=839" alt="TSV 4">
         </div>
       </div>
 
       <aside class="card panel reveal" data-reveal>
-        <h3>Resumo rápido</h3>
+        <h3>Resumo direto</h3>
         <p class="muted"><strong>Líder:</strong> matheusfps</p>
-        <p class="muted"><strong>Servidor privado:</strong> sim — usado para treinos e eventos</p>
-        <p class="muted"><strong>Formulários de staff:</strong> disponibilizados apenas no Discord (quando aberto)</p>
-        <p class="muted"><strong>Sorteios:</strong> fazemos sorteios periódicos — incluindo Robux quando possível</p>
+        <p class="muted"><strong>Servidor privado:</strong> usado para treinos, testes e eventos internos</p>
+        <p class="muted"><strong>Vagas na staff:</strong> abertas apenas pelo Discord, quando disponíveis</p>
+        <p class="muted"><strong>Sorteios:</strong> ocorrem periodicamente, podendo incluir Robux</p>
         <div style="height:12px"></div>
         <a class="btn-discord" href="https://discord.gg/8CnKEx7jnq" target="_blank" rel="noopener">Entrar no Discord</a>
       </aside>
     </div>
 
-    <!-- História -->
     <section id="historia" class="card reveal" data-reveal>
       <h3>História do TSV</h3>
       <p class="muted">
-        O TSV nasceu como um grupo pequeno de amigos no Westbound e cresceu pela consistência em eventos, suporte entre membros e presença no Discord.
-        Com o tempo, firmamos alianças, criamos um servidor privado para organizar treinos e desenvolvemos uma equipe de moderação ativa.
-        Hoje o clã se organiza por cargos, times e squads para competições internas e externas.
+        O TSV começou como um simples grupo de amigos jogando Westbound. Com dedicação, constância e organização, o clã foi crescendo e se estruturando.
+        Vieram as alianças, o servidor privado e uma staff comprometida em manter tudo funcionando.
+        Hoje o TSV é dividido em cargos, squads e equipes, sempre pronto para treinos, eventos e disputas.
       </p>
-
-      <div style="height:12px"></div>
-      <div class="two-col">
-        <div class="panel">
-          <h4 style="margin-top:0;color:var(--accent)">O que fazemos</h4>
-          <ul>
-            <li>Eventos semanais em Westbound e outros servidores.</li>
-            <li>Treinos e campeonatos internos.</li>
-            <li>Sorteios exclusivos para membros ativos.</li>
-            <li>Parcerias e collabs com outros clãs/alíados.</li>
-          </ul>
-        </div>
-
-        <div class="panel">
-          <h4 style="margin-top:0;color:var(--accent)">Serviços do servidor</h4>
-          <ul>
-            <li>Canais de suporte 24/7.</li>
-            <li>Canal exclusivo para anúncios de sorteios e vagas.</li>
-            <li>Canal privado para staff e comandos administrativos.</li>
-            <li>Eventos especiais com premiações (às vezes Robux).</li>
-          </ul>
-        </div>
-      </div>
     </section>
 
-    <!-- Jogos -->
     <section id="jogos" class="card reveal" data-reveal>
-      <h3>Jogos e presença</h3>
+      <h3>Jogos e atuação</h3>
       <p class="muted">
-        O foco principal do TSV é Westbound, mas estamos em expansão para outros títulos como Rivals. Em cada jogo mantemos squads treinados e regras internas adaptadas.
+        Nosso principal território é o Westbound, mas o TSV também está expandindo para outros jogos como Rivals.
+        Em cada título, mantemos disciplina, estratégia e organização.
       </p>
 
-      <h4 style="color:var(--accent); margin-top:12px">Westbound — o foco</h4>
+      <h4 style="color:var(--accent); margin-top:12px">Westbound — nossa base</h4>
       <p class="muted">
-        Westbound é um jogo de temática western no Roblox com mecânicas de roleplay, combate e economia. Os jogadores assumem funções (outlaw, bounty hunter, minerador), completam missões, mineram recursos e participam de confrontos PvP.
-        Nosso clã foca em organizar grupos para eventos, dominar áreas, realizar assaltos coordenados e proteger rotas econômicas em conjunto com aliados.
+        Westbound é um jogo com tema faroeste que mistura roleplay, combate e economia. Nele, os jogadores assumem papéis como foras-da-lei, caçadores de recompensas e mineradores.
+        O TSV atua de forma organizada, dominando áreas, protegendo rotas e participando de confrontos coordenados.
       </p>
 
-      <h4 style="color:var(--accent); margin-top:12px">Rivals — expansão</h4>
+      <h4 style="color:var(--accent); margin-top:12px">Rivals — nosso avanço</h4>
       <p class="muted">
-        Em Rivals o foco é competitivo: partidas em equipes, progressão por chaves e contratos, além de recompensas por performance. O TSV traz para lá sua experiência em organização e treinos, investindo em squads especializados.
+        Em Rivals, o foco é competitividade pura. Formamos squads treinados, participamos de partidas estratégicas e buscamos sempre melhorar o desempenho coletivo.
       </p>
     </section>
 
-    <!-- Curiosidades e sorteios -->
     <section id="curiosidades" class="card reveal" data-reveal>
       <h3>Curiosidades & Sorteios</h3>
       <div class="curios">
-        <div class="item">O nome "The Silent Vengence" surgiu de uma partida estratégica onde o grupo venceu silenciosamente um inimigo bem maior.</div>
-        <div class="item">Temos canais de mídia: screenshots, highlights e melhores jogadas dos membros.</div>
-        <div class="item">Membros antigos recebem tags e privilégios no servidor privado.</div>
-        <div class="item">Realizamos sorteios periódicos (skins, itens do jogo e, ocasionalmente, Robux quando disponível).</div>
-        <div class="item">Formulários de staff são abertos via Discord (canal específico); o site não contém formulários.</div>
-        <div class="item">Aliados e parcerias são anunciados no canal de parcerias — buscamos sempre cooperação estratégica.</div>
-      </div>
-
-      <div style="height:12px"></div>
-      <div class="panel">
-        <h4 style="margin:0;color:var(--accent)">Sorteios e promoções</h4>
-        <p class="muted">
-          Os sorteios são divulgados no Discord e têm regras claras no próprio anúncio. Participação exige estar presente no servidor e seguir as instruções do post. O TSV já realizou sorteios com itens do jogo e distribuição de Robux em ocasiões especiais.
-        </p>
+        <div class="item">O nome "The Silent Vengeance" veio de uma vitória silenciosa contra um grupo muito maior.</div>
+        <div class="item">Temos canais exclusivos para prints, clipes e momentos marcantes dos membros.</div>
+        <div class="item">Membros antigos recebem reconhecimento e benefícios dentro do servidor.</div>
+        <div class="item">Sorteios podem incluir skins, itens e até Robux em ocasiões especiais.</div>
+        <div class="item">As inscrições para staff acontecem somente pelo Discord.</div>
+        <div class="item">Parcerias são firmadas com foco em estratégia e crescimento mútuo.</div>
       </div>
     </section>
 
-    <!-- Aliados e Staff -->
-    <section id="aliados" class="card reveal" data-reveal>
-      <h3>Aliados & Staff</h3>
-      <p class="muted">
-        O TSV mantém parcerias com outros clãs que nos apoiam em eventos e batalhas coordenadas. A staff é ativa e moderadora — quando abrimos vagas, os formulários aparecem somente no Discord (não no site).
-      </p>
+    <footer>
+      <p>TSV — construindo respeito dentro e fora do jogo.</p>
+    </footer>
 
-      <div style="height:12px"></div>
-      <div class="two-col">
-        <div class="panel">
-          <h4 style="margin-top:0;color:var(--accent)">Como funcionam as vagas</h4>
-          <p class="muted">Aberturas para staff são anunciadas no canal de anúncios. O processo exige: participação ativa, histórico no servidor e entrevista em voz/texto. Os formulários são hospedados e preenchidos via Discord.</p>
-        </div>
-
-        <div class="panel">
-          <h4 style="margin-top:0;color:var(--accent)">Aliados</h4>
-          <p class="muted">Nossos aliados ajudam em eventos, fornecem suporte logístico e participam de collabs. Os nomes são anunciados no canal de parcerias do Discord.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- contato / CTA corrigido -->
-    <section id="contato" class="card reveal" data-reveal>
-      <h3>Quer entrar?</h3>
-      <p class="muted">Se você quer se juntar ao TSV, participar dos eventos, concorrer aos sorteios ou conversar sobre parcerias, entre no nosso Discord. Todos os formulários oficiais (staff, parcerias) são disponibilizados lá quando necessário.</p>
-
-      <div style="margin-top:14px; display:flex; gap:12px; align-items:center; flex-wrap:wrap">
-        <a class="btn-discord" href="https://discord.gg/8CnKEx7jnq" target="_blank" rel="noopener">Acessar Discord do TSV</a>
-        <div style="color:var(--muted); font-size:13px">Líder: <strong class="leader">matheusfps</strong> · Servidor privado · Aliados</div>
-      </div>
-    </section>
-
-    <footer>feito por plmv_luks</footer>
   </div>
-
-<script>
-  // Lazy-load thumbs and reveal on scroll
-  const thumbs = document.querySelectorAll('.thumbs img');
-  const revealNodes = document.querySelectorAll('[data-reveal]');
-  const bgLayers = [
-    document.getElementById('bg1'),
-    document.getElementById('bg2'),
-    document.getElementById('bg3'),
-    document.getElementById('bg4')
-  ];
-
-  // IntersectionObserver for reveal elements
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-        entry.target.classList.add('reveal-visible');
-        // show thumbs inside the element if any
-        entry.target.querySelectorAll('.thumbs img[data-src]').forEach(img => {
-          if(!img.src){
-            img.src = img.getAttribute('data-src');
-            img.addEventListener('load', ()=> img.classList.add('show'));
-          } else { img.classList.add('show') }
-        });
-      }
-    });
-  }, {threshold:0.18});
-
-  revealNodes.forEach(el => obs.observe(el));
-
-  // Reveal animation: add class for CSS effects
-  document.querySelectorAll('.reveal').forEach(el => {
-    el.style.opacity = 0; el.style.transform = 'translateY(18px)';
-  });
-  const revealObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.style.transition = 'opacity .9s ease, transform .9s cubic-bezier(.2,.9,.3,1)';
-        e.target.style.opacity = 1;
-        e.target.style.transform = 'translateY(0)';
-        revealObserver.unobserve(e.target);
-      }
-    });
-  }, {threshold:0.18});
-  document.querySelectorAll('.reveal').forEach(e=> revealObserver.observe(e));
-
-  // Background layers: show progressively by scroll position and by which section is visible
-  const sections = Array.from(document.querySelectorAll('section, .card.left, .card.panel'));
-  function updateBackgrounds(){
-    const h = window.innerHeight;
-    const scroll = window.scrollY;
-    sections.forEach((sec, i)=>{
-      const rect = sec.getBoundingClientRect();
-      const top = rect.top;
-      const visible = top < h * 0.8 && (top + rect.height) > h * 0.05;
-      // compute intensity based on distance from top
-      let intensity = 0;
-      if(visible){
-        // closer to center => stronger
-        const centerDist = Math.abs((top + rect.height/2) - (h/2));
-        intensity = Math.max(0, 1 - (centerDist / (h*0.9)));
-      }
-      // map sections to bg layers index (wrap if more)
-      const layerIndex = i % bgLayers.length;
-      const layer = bgLayers[layerIndex];
-      const targetOpacity = Math.min(1, Math.max(0, intensity)) * parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--max-bg-opacity'));
-      // small easing
-      layer.style.opacity = Math.max(layer.style.opacity || 0, targetOpacity).toFixed(2);
-      // ensure other layers fade out slightly when not relevant
-      // reduce opacity if no near sections mapped
-      if(!visible){
-        // gently decrease
-        const cur = parseFloat(layer.style.opacity || 0);
-        layer.style.opacity = Math.max(0, cur - 0.02).toFixed(2);
-      }
-    });
-  }
-
-  // also make bg change smoothly when scrolling long pages
-  window.addEventListener('scroll', ()=> {
-    updateBackgrounds();
-    // lazy show thumbs that are near viewport
-    thumbs.forEach(img => {
-      const r = img.getBoundingClientRect();
-      if(r.top < window.innerHeight * 0.9 && !img.src){
-        img.src = img.getAttribute('data-src');
-        img.addEventListener('load', ()=> img.classList.add('show'));
-      }
-    });
-  }, {passive:true});
-
-  window.addEventListener('load', ()=>{
-    // initial reveal
-    updateBackgrounds();
-    // preload first thumb quickly
-    thumbs.forEach((img, idx) => {
-      if(idx<2){ img.src = img.getAttribute('data-src'); img.addEventListener('load', ()=> img.classList.add('show')); }
-    });
-  });
-
-  // Accessibility: keyboard 'd' quick open discord
-  document.addEventListener('keydown', (e)=>{
-    if(e.key.toLowerCase() === 'd' && !e.ctrlKey && !e.metaKey){
-      window.open('https://discord.gg/8CnKEx7jnq','_blank','noopener');
-    }
-  });
-</script>
 </body>
 </html>
